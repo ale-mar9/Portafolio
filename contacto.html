@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./portafolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./imagenes/icon1.png">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="Nav" style="background-color: #c6d4d200;">
+        <div class="Nav_contenido">
+            <div class="Nav_contenido_avatar">
+                <img style="display: none;" src="./imagenes/avatar.png" alt="">
+            </div>
+        
+            <div class="Nav_contenido_anclas">
+                <ul id="lista" class="Nav_contenido_anclas_list">
+                    <li id="elemento1" class="elementos"><a class="Nav_contenido_anclas_list_ancla" href="./index.html" >INICIO <img style="width: 20px; height: 20px;" src="./imagenes/home8.gif" alt=""></a></li>
+                    <li id="elemento2" class="elementos"><a class="Nav_contenido_anclas_list_ancla" href="./proyectos.html">PROYECTOS<img style="width: 20px; height: 20px;" src="./imagenes/list.gif" alt=""></a></li>
+                    <li id="elemento3" class="elementos" style="border-bottom: 2px solid #EB6262;"><a class="Nav_contenido_anclas_list_ancla" href="">CONTACTO <img style="width: 20px; height: 20px;" src="./imagenes/contacto1.gif" alt=""></a></li>
+                </ul>
+                <div id="menu" class="Nav_contenido_anclas_responsive">
+                    <i id="iconoMenu" class="fa-solid fa-bars"></i>
+                    <i id="iconoReturn" class="fa-solid fa-rotate-left"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="sectionContacto" style="background-color: #C6D4D2; align-items: flex-start;">
+        <div id="contenido" class="sectionContacto_contenido">
+            <div  id="loading" class="sectionContacto_contenido_loading">
+                <h2>Enviando...</h2>
+                <img style="width: 100px; height: 100px;" src="./imagenes/loading.gif" alt="">
+            </div>
+            <div id="enviado" class="sectionContacto_contenido_loading">
+                <h2 style="display: flex; align-items: center; justify-content: center;">Mensaje enviado <img style="width: 60px; height: 60px;" src="./imagenes/check.gif" alt=""></h2>
+                <h3>Solicitud procesada exitosamente</h3>
+            </div>
+            <img src="./imagenes/sending2.gif" alt="">
+
+            <!--FORMULARIO-->
+            <div class="formulario__grupo" id="grupo__nombre">
+				<div class="formulario_grupo_cajaInput">
+					<input id="nombre" name="input" type="text" placeholder="Nombre">
+					<i id="icono" class="formulario__validacion-estado fa-solid fa-circle"></i>
+				</div>
+				<p class="formulario__input-error">Error: El nombre debe tener solo letras en mayusculas y en minusculas</p>
+			</div>
+
+            <div class="formulario__grupo" id="grupo__apellido">
+				<div class="formulario_grupo_cajaInput">
+					<input id="apellido" name="input" type="text" placeholder="Apellido">
+					<i id="icono" class="formulario__validacion-estado fa-solid fa-circle"></i>
+				</div>
+				<p class="formulario__input-error">Error: El apellido debe tener solo letras en mayusculas y en minusculas</p>
+			</div>
+
+            <div class="formulario__grupo" id="grupo__correo">
+				<div class="formulario_grupo_cajaInput">
+					<input id="correo" name="input" type="email" placeholder="Correo">
+					<i id="icono" class="formulario__validacion-estado fa-solid fa-circle"></i>
+				</div>
+				<p class="formulario__input-error">Error: El correo solo puede contener letras, numeros, puntos, guiones y guion bajo</p>
+			</div>
+
+            <div class="formulario__grupo" id="grupo__mensaje">
+                <textarea id="mensaje" name="input" placeholder="Mensaje" cols="20" rows="2"></textarea>
+                <p class="formulario__input-error">Error: El mensaje debe tener solo letras en mayusculas y en minusculas</p>
+            </div>
+
+            <button type="submit" id="boton" class="hvr-sweep-to-right">
+                Enviar mensaje <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <div id="mensajeRellenar" class="mensajeRellenar">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente</P></p>
+            </div>
+        </div>
+        <img class="sectionContacto_img" style="height: 100vh;" src="./imagenes/ondaContactoOfc.png" alt="">
+    </section>
+</body>
+
+<script>
+    const lista = document.getElementById("lista");
+    const iconoReturn= document.getElementById("iconoReturn")
+    const iconoMenu = document.getElementById("iconoMenu")
+    const elementos = document.getElementsByClassName("elementos")
+    const elemento1 = document.getElementById("elemento1")
+    const elemento2 = document.getElementById("elemento2")
+    const elemento3 = document.getElementById("elemento3")
+    const ocultarMenu= ()=>{
+        iconoMenu.style.display="block";
+        iconoReturn.style.display="none";
+        lista.style.animation="listaRever 1s alternate"
+        function oculto(){
+            lista.style.display="none"
+        }
+        setTimeout(oculto, 980)
+        elemento1.style.animation="elementosRever 1s alternate"
+        elemento2.style.animation="elementosRever 1s alternate"
+        elemento3.style.animation="elementosRever 1s alternate"
+    };
+    const mostrarMenu=()=>{
+        lista.style.display="flex";
+        iconoReturn.style.display="block";
+        iconoMenu.style.display="none";
+        lista.style.animation="lista 1s alternate";
+        elemento1.style.animation="elementos 1s alternate"
+        elemento2.style.animation="elementos 1s alternate"
+        elemento3.style.animation="elementos 1s alternate"
+    };    
+    iconoMenu.addEventListener("click", mostrarMenu);
+    iconoReturn.addEventListener("click", ocultarMenu)
+    elementos.addEventListener("click", ocultarMenu);
+</script>
+<script src="errorForm.js"></script>
+</html>

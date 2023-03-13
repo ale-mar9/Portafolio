@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./portafolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./imagenes/icon1.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--Nav fijo-->
+    <nav class="Nav">
+        <div class="Nav_contenido">
+            <div class="Nav_contenido_avatar">
+                <img src="./imagenes/avatar.png" alt="">
+            </div>
+        
+            <div class="Nav_contenido_anclas">
+                <ul id="lista" class="Nav_contenido_anclas_list">
+                    <li id="elemento1" class="elementos" style="border-bottom: 2px solid #EB6262;"><a href="" class="Nav_contenido_anclas_list_ancla">INICIO <img style="width: 20px; height: 20px;" src="./imagenes/home8.gif" alt=""></a></li>
+                    <li id="elemento2" class="elementos"><a class="Nav_contenido_anclas_list_ancla" href="./proyectos.html">PROYECTOS<img style="width: 20px; height: 20px;" src="./imagenes/list.gif" alt=""></a></li>
+                    <li id="elemento3" class="elementos"><a class="Nav_contenido_anclas_list_ancla" href="./contacto.html">CONTACTO <img style="width: 20px; height: 20px;" src="./imagenes/contacto1.gif" alt=""></a></li>
+                </ul>
+                <div id="menu" class="Nav_contenido_anclas_responsive">
+                    <i id="iconoMenu" class="fa-solid fa-bars"></i>
+                    <i id="iconoReturn" class="fa-solid fa-rotate-left"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!--Inicio-->
+    <section id="inicio" class="section">
+        <div class="inicio">
+            <img class="inicio_imgPrincipal" src="./imagenes/comp.png" alt="">
+            <div class="inicio_tituloInfo">
+                <h1 class="inicio_tituloInfo_titulo">Web Developer</h1>
+                <h2>Alejandra Diaz</h2>
+                <p>Front-end</p>
+            </div>
+        </div>
+        <img class="section_img" src="./imagenes/onda2.png" alt="">
+    </section>
+
+    <!--Sobre mi-->
+    <section class="sobreMi">
+        <img src="./imagenes/about me-img.png" alt="">
+        <div class="sobreMi_col">
+            <div data-aos="fade-up" data-aos-duration="1500" class="sobreMi_col_bio">
+                <p><span>Hola, me llamo Alejandra Diaz</span>, 
+                    soy estudiante de programacion web y si necesitas
+                    una pagina web para tu empresa, negocio o emprendimiento, 
+                    estas en el lugar correcto!
+
+                <br>
+                <br>
+                Durante mi tiempo de aprendizaje he descubierto una forma util 
+                y bonita de plasmar mi lado logico y creativo mediante 
+                el codigo y el diseño de las paginas. De tal manera que me aseguro
+                de que tu pagina sea funcional y agradable a la vista</p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1500" class="sobreMi_col_fila">
+                <div class="sobreMi_col_fila_datos">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong >🎂 Cumpleaños</strong>
+                            09-07
+                        </li>
+
+                        <li>
+                            <strong>📱 Nro de telefono</strong>
+                            +58 424-9259828
+                        </li>
+
+                        <li>
+                            <strong>📧 Email</strong>
+                            alejandramdiaz3@gmail.com
+                        </li>
+
+                        <li> 
+                            <strong>🌎 Direccion</strong>
+                            Monagas, Venezuela
+                        </li>
+                    </ul>
+                </div>
+                <div class="sobreMi_col_fila_intereses">
+                    <h3>Intereses</h3>
+                    <div class="sobreMi_col_fila_intereses_caja">
+                        <div class="sobreMi_col_fila_intereses_caja_iconos" id="cajita">
+                            <img width="60px" src="./imagenes/musica.gif" alt="">
+                            <strong>Musica</strong>
+                        </div>
+            
+                        <div class="sobreMi_col_fila_intereses_caja_iconos">
+                            <img width="60px" src="./imagenes/travel.gif" alt="">
+                            <strong>Viajar</strong>
+                        </div>
+            
+                        <div class="sobreMi_col_fila_intereses_caja_iconos" id="cajita">
+                            <img width="60px" src="./imagenes/leer.gif" alt="">
+                            <strong>Leer</strong>
+                        </div>
+                        
+                        <div class="sobreMi_col_fila_intereses_caja_iconos">
+                            <img width="60px" src="./imagenes/bike2.gif" alt="">
+                            <strong>Deporte</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="arriba">
+        <a href="#inicio" class="arriba_boton">
+            <lord-icon src="https://cdn.lordicon.com/xsdtfyne.json" trigger="hover" colors="primary:#ee6d66" state="hover-1"style="width:100%;height:100%"></lord-icon></a>
+        <div class="arriba_fotoIconos">
+            <div id="icoon">
+                    <a target="_blank" href="https://github.com/alejandra-diaz9"><div></div><i class="fa-brands fa-github"></i></a>
+                    <a target="_blank" href ="https://wa.me/584249259828?text=Hola!%20Me%20gustaria%20saber%20mas%20informacion%20sobre%20tu%20trabajo"><div></div><i class="fa-brands fa-whatsapp"></i>
+                    <a target="_blank" href=""><div></div><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href=""><div></div><i class="fa-brands fa-facebook-f"></i></a>
+                    <a target="_blank" href=""><div></div><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+        <div>
+            <p id="texto"></p>
+        </div>
+    </footer>
+</body>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script>
+    const lista = document.getElementById("lista");const iconoReturn= document.getElementById("iconoReturn")
+    const iconoMenu = document.getElementById("iconoMenu")
+    const elementos = document.getElementsByClassName("elementos")
+    const elemento1 = document.getElementById("elemento1")
+    const elemento2 = document.getElementById("elemento2")
+    const elemento3 = document.getElementById("elemento3")
+    const ocultarMenu= ()=>{
+        iconoMenu.style.display="block";
+        iconoReturn.style.display="none";
+        lista.style.animation="listaRever 1s alternate"
+        function oculto(){
+            lista.style.display="none"
+        }
+        setTimeout(oculto, 980)
+        elemento1.style.animation="elementosRever 1s alternate"
+        elemento2.style.animation="elementosRever 1s alternate"
+        elemento3.style.animation="elementosRever 1s alternate"
+    };
+    const mostrarMenu=()=>{
+        lista.style.display="flex";
+        iconoReturn.style.display="block";
+        iconoMenu.style.display="none";
+        lista.style.animation="lista 1s alternate";
+        elemento1.style.animation="elementos 1s alternate"
+        elemento2.style.animation="elementos 1s alternate"
+        elemento3.style.animation="elementos 1s alternate"
+    };    
+    iconoMenu.addEventListener("click", mostrarMenu);
+    iconoReturn.addEventListener("click", ocultarMenu)
+    elementos.addEventListener("click", ocultarMenu);
+</script>
+<script>
+    const hora = document.getElementById("texto");
+    let tiempo = setInterval(mostrar, 1000);
+    function mostrar(){
+        const date = new Date(); 
+        let fecha = date.toLocaleTimeString();
+        hora.textContent= fecha;
+    }   
+</script>
+</html>

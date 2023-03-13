@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Roboto:wght@100&display=swap')
+$rosaClaro: rgba(248, 189, 192, 1)
+$rosaOscuro:#EB6262
+@mixin centerBox($param1:auto, $param2:auto, $param3:space-between)
+    display: flex
+    justify-content: $param3
+    align-items: center
+    width: $param1
+    height: $param2
+@mixin texto($sizeLetra:none, $fontweight:auto, $letraColor: white, $textDeco:none)
+    font-size: $sizeLetra
+    font-weight: $fontweight
+    font-family:'Righteous' 
+    color: $letraColor
+    text-decoration: $textDeco
+@mixin decoration($mar:auto, $pad:none, $bor:none, $bor-r:none, $bg-c:none)
+    margin:$mar 
+    padding:$pad
+    border: $bor
+    border-radius: $bor-r
+    background-color: $bg-c
+
+/*Animacion Boton Enviar (Pagina Contacto)*/
+@keyframes saltoBotonIncorrecto
+    0%
+        transform: rotate(-2deg)
+        background-color: #b82323
+        box-shadow: 0 0 10px #b82323, 0 0 40px #b82323, 0 0 80px #b82323
+    33.3%
+        transform: rotate(2deg)
+        background-color: #b82323
+        box-shadow: 0 0 10px #b82323, 0 0 40px #b82323, 0 0 80px #b82323
+    66.6%
+        transform: rotate(-2deg)
+        background-color: #b82323
+        box-shadow: 0 0 10px #b82323, 0 0 40px #b82323, 0 0 80px #b82323
+    100%
+        transform: rotate(2deg)	
+        background-color: #b82323
+        box-shadow: 0 0 10px #b82323, 0 0 40px #b82323, 0 0 80px #b82323
+
+@keyframes saltoBotonCorrecto
+    0%
+        transform:  rotate(-2deg)
+        background-color: #78e46e
+        box-shadow: 0 0 10px #78e46e, 0 0 40px #78e46e, 0 0 80px #78e46e
+    33.3%
+        transform:  rotate(2deg)
+        background-color: #78e46e
+        box-shadow: 0 0 10px #78e46e, 0 0 40px #78e46e, 0 0 80px #78e46e
+    66.6%
+        transform:  rotate(-2deg)
+        background-color: #78e46e
+        box-shadow: 0 0 10px #78e46e, 0 0 40px #78e46e, 0 0 80px #78e46e
+    100%
+        transform:  rotate(2deg)	
+        background-color: #78e46e
+        box-shadow: 0 0 10px #78e46e, 0 0 40px #78e46e, 0 0 80px #78e46e
+
+/*Animaciones Pagina Principal*/
+@keyframes Img
+    0%
+        transform: scale(1)
+    100%
+        transform: scale(1.02)
+@keyframes iconosRedes
+    0%
+        width: 0%
+        height: 0%
+        top: 50%
+        left: 50%
+
+    100%
+        width: 100%
+        height: 100%
+        background: #6ccab9
+        top: 0
+        left: 0
+
+/*Animaciones menu responsive*/
+@keyframes lista
+    0%
+        width: 100vw
+        height: 0vh
+    100%
+        width: 100vw
+        height: 94vh
+@keyframes listaRever
+    0%
+        width: 100vw
+        height: 94vh
+    100%
+        width: 100vw
+        height: 0vh
+@keyframes elementos
+    0%
+        transform: scale(0)
+    100%
+        transform: scale(1)
+@keyframes elementosRever
+    0%
+        transform: scale(1)
+    100%
+        transform: scale(0)
+
+/*Animaciones Skills*/
+@keyframes HTML
+    0%
+        width: 0%
+    100%
+        width: 70%
+@keyframes CSS
+    0%
+        width: 0%
+    100%
+        width: 60%
+@keyframes tailwind
+    0%
+        width: 0%
+    100%
+        width: 80%
+@keyframes javascript
+    0%
+        width: 0%
+    100%
+        width: 30%
+@keyframes SASS
+    0%
+        width: 0%
+    100%
+        width: 70%
+@keyframes Font-Awesone
+    0%
+        width: 0%
+    100%
+        width: 70%
+@keyframes Figma
+    0%
+        width: 0%
+    100%
+        width: 50%
+
+@keyframes wordpress
+    0%
+        width: 0
+    100%
+        width: 53%
+
+
+
+*
+    box-sizing: border-box
+    font-family: 'Work Sans'
+    margin: 0
+    padding: 0
+
+html
+    scroll-behavior: smooth
+
+.section
+    width: 100%
+    scroll-margin-top: 75px
+    padding: none
+    &_img
+        height: 90px
+        width: 100%
+
+/*Nav Fijo*/
+.Nav
+    position: fixed
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 101
+    background-color: $rosaClaro
+    &_contenido
+        @include centerBox(100%, auto)
+        @include decoration(auto, 0 20px, none, 20px)
+        padding-top: 2px
+        height: 86px
+        &_avatar
+            display: flex
+            width: fit-content
+            align-items: center
+            img
+                width: 80px
+                height: 80px
+                margin-right: 10px
+        &_anclas_list
+            display: flex
+            list-style: none
+            li
+                padding: 16px
+                margin-left: 8px
+                margin-right: 8px
+                border-radius: 0
+                display: flex
+                align-items: center
+                justify-content: center
+                &:hover
+                    border-bottom: 2px solid $rosaOscuro
+            &_ancla
+                text-align: none
+                color: white
+                transition: .5s
+                text-decoration: none
+                display: flex
+                align-items: center
+                justify-content: center
+                img
+                    margin-left: 5px
+        &_anclas_responsive
+            @include decoration(none, 5px 10px, none, 5px,)
+            color: $rosaOscuro
+            cursor: pointer
+            display: none
+#iconoReturn
+    display: none
+
+/*Seccion Inicio (Pagina Principal)*/
+#inicio
+    height: 100vh
+    background-color: rgba(248, 189, 192, 1)
+.inicio 
+    @include centerBox (90%)
+    justify-content: center
+    color: #63707E
+    margin: auto 
+    flex-direction: column
+    background-color: $rosaClaro
+    &_imgPrincipal
+        width: 650px
+        height: 346px 
+        margin-top: 0
+        animation: Img 1s alternate infinite 
+    &_tituloInfo
+        width: 70%
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        a
+            img
+                margin-bottom: 5px
+        h2
+            @include texto(50px, normal)
+            margin-bottom: 5px
+        p
+            @include texto(24px)
+            background-color: $rosaOscuro
+            border-radius: 10px
+            display: block
+            padding: 5px
+            width: fit-content
+        &_titulo
+            @include texto(96px, normal)
+            margin: none
+            position: relative
+            z-index: 98
+            text-shadow: 4px 4px #EB6262
+            margin-bottom: 5px
+
+/*Seccion sobre mi(Pagina Principal)*/
+.sobreMi
+    @include centerBox(100%)
+    flex-direction: row
+    @include decoration(none, 0px 40px 50px 40px, none, none, #C6D4D2)
+    &_col
+        @include centerBox()
+        width: 70%
+        flex-direction: column
+        &_bio
+            width: 70%
+            background-color: $rosaClaro
+            border-radius: 40px
+            padding: 30px
+            p
+                @include texto(18px)
+                font-family: "Work Sans"
+                text-align: justify
+                span
+                    color: $rosaOscuro
+                    font-weight: bold
+        &_fila
+            @include centerBox(100%)
+            width: 100%
+            flex-direction: row
+            margin-top: 30px
+            justify-content: center
+            align-items: flex-start
+            &_datos
+                width: 40%
+                @include decoration(none, 10px, none, 40px, $rosaClaro)
+                display: flex
+                flex-direction: column
+                align-items: center
+                h3
+                    @include texto(22px)
+                    margin-bottom: 20px
+                    margin-top: 20px
+                    font-family: "Work Sans"
+                ul
+                    @include texto()
+                    font-family: "Work Sans"
+                    list-style: none
+                    li
+                        @include decoration(0px 0px 20px 0px)
+                        strong
+                            color: #EB6262
+                            font-weight: bold
+            &_intereses
+                @include centerBox(40%, auto, center)
+                flex-direction: column
+                @include decoration(0px 0px 0px 30px, 10px, none, 40px, $rosaClaro)
+                &_caja
+                    display: grid
+                    grid-template-columns: auto auto
+                    &_iconos
+                        @include centerBox(120px, fit content, center)
+                        flex-direction: column
+                        @include decoration(0px 0px 15px 0px, none, none, 10px, white)
+                        transition: .5s
+                        color: #bb3030
+                        &:hover
+                            background-color: #C6D4D2
+                            transform: scale(1.07)
+                        i
+                            font-size: 20px
+                            margin-bottom: 10px
+                h3
+                    @include texto(22px)
+                    margin-bottom: 20px
+                    font-family: "Work Sans"
+                    margin-top: 20px
+#cajita
+    margin-right: 15px
+
+/*Footer(Pagina Principal)*/
+.arriba
+    @include decoration(none, 50px 0px 30px 0px, none, none, #f5d8d9)
+    @include centerBox(100%, fit content, center)
+    text-align: center
+    position: relative
+    flex-direction: column
+    p
+        font-family: 'Ubuntu Mono', monospace
+        font-size: 24px
+        color: $rosaOscuro
+    &_boton
+        display: block
+        @include centerBox(50px, 50px, center)
+        @include decoration(none, none, none, 50%, white)
+        color: $rosaOscuro
+        position: absolute
+        top: -25px
+        font-size: 18px
+    &_fotoIconos
+        @include decoration(auto, none, none, 20px)
+        @include centerBox(100%)
+        flex-direction: column
+        a
+            @include decoration(20px 7px, none, none, 50%, white)
+            @include centerBox(42px, 42px, center)
+            color: $rosaOscuro
+            display: inline-block
+            text-decoration: none
+            transition: .3s
+            line-height: 42px
+            font-size: 20px
+            text-align: center
+            position: relative
+            z-index: 2
+            i
+                background-color: #00000000
+                z-index: 2
+                width: 100%
+                height: 100%
+                position: relative
+            div
+                @include decoration(none, none, none, 50%, #6ccab9)
+                @include centerBox(0, 0)
+                position: absolute
+                z-index: 0
+            &:hover
+                transform: translate(0px,-4px)
+                div
+                    animation: iconosRedes 0.7s normal
+                    width: 100%
+                    height: 100%
+                    bottom: 0
+
+/*Portafolio (Pagina Proyectos)*/
+#portafolio
+    padding-top: 86px
+.portafolio
+    @include centerBox(100%)
+    flex-direction: column
+    background-color: #C6D4D2
+    height: auto
+    h2
+        @include texto(48px)
+        @include decoration(none, 0 0 20px 0)
+        text-align: center
+        width: 100%
+    &_galeria
+        @include centerBox(80%, auto, center)
+        flex-direction: row
+        display: grid
+        grid-template-columns: auto auto auto
+        gap: 30px
+        &_proyecto
+            position: relative
+            @include centerBox(fit-content, fit-content, center)
+            @include decoration(none, 20px, none, 40px, $rosaClaro)
+            cursor: pointer
+            img
+                width: 170px
+                height: 110px
+                margin: auto
+                border-radius: 10px
+            &_overlay
+                @include centerBox(100%, 100%, center)
+                flex-direction: column
+                text-align: center
+                border-radius: 40px
+                position: absolute
+                top: 0
+                left: 0
+                background: linear-gradient($rosaClaro, $rosaClaro)
+                transition: 1s
+                letter-spacing: 3px
+                a
+                    @include texto(24px, auto, white)
+                opacity: 0
+                &:hover
+                    opacity: 5
+
+/*Skills (Pagina Proyectos)*/
+.skills
+    @include centerBox(100%, auto, center)
+    flex-direction: column
+    margin: auto
+    h2
+        @include texto(48px)
+        @include decoration(0 0 20px 0, 0)
+        text-align: center
+        width: 100%
+    &_contenidoFila
+        @include centerBox(80%, auto, space-around)
+        align-items: flex-start
+        &_col
+            width: 40%
+            @include decoration(none, 20px, none, 40px, #C6D4D2)
+            h3
+                @include texto(28px)
+            i
+                color:$rosaOscuro
+                margin-left: 5px
+                font-size: 18px
+            &_skill
+                strong
+                    color: white
+                    font-weight: bold
+                    display: flex
+                    margin-bottom: 25px
+                    align-items: center
+                &_barra
+                    height: 8px
+                    width: 90%
+                    background-color: #fa9595
+                    position: relative
+                    margin-bottom: 30px
+                    &_progreso
+                        background-color: #EB6262
+                        position: absolute
+                        top: 0
+                        left: 0
+                        height: 8px
+                        span
+                            position: absolute
+                            @include centerBox(40px, 40px, center)
+                            @include decoration(none, none, none, 50%, #EB6262)
+                            color: white
+                            font-weight: bold
+                            line-height: 40px
+                            top: -17px
+                            right: -15px
+                            font-size: 14px
+/*Animaciones Skill*/
+.HTML
+    width: 0
+    animation: 2s HTML forwards
+.CSS
+    width: 0
+    animation: 2s CSS forwards
+.javascript
+    width: 0
+    animation: 2s javascript forwards
+.SASS
+    width: 0
+    animation: 2s SASS forwards
+.Wordpress
+    width: 0
+    animation: 2s wordpress forwards
+.Tailwind
+    width: 0
+    animation: 2s tailwind forwards
+.Font-Awesone
+    width: 0
+    animation: 2s Font-Awesone forwards
+.Figma
+    width: 0
+    animation: 2s Figma forwards
+
+/*Pagina Contacto*/
+.sectionContacto
+    @include centerBox(100%, auto)
+    background-color: #C6D4D2
+    h2
+        @include texto(48px)
+        @include decoration(20px 0 0 0, 0)
+        text-align: center
+    h3
+        @include texto(30px)
+        @include decoration(none, 0)
+        text-align: center
+    &_contenido
+        @include centerBox(50%, 100vh, center)
+        flex-direction: column
+        align-items: center
+        position: relative
+        &_loading
+            @include centerBox(100%, 100%, center)
+            background: #C6D4D2
+            position: absolute
+            top: 0
+            left: 0
+            display: none
+            z-index: 90
+            h2
+                margin-top: 0px
+        img
+            width: 150px
+            height: 150px
+        input
+            display: block
+            @include decoration(0 0 20px 0, 10px, none, 30px, white)
+            @include texto(16px, auto, gray)
+            position: relative
+            &:focus
+                border: 2px solid #0075FF
+                outline: none
+                box-shadow: 3px 0px 30px rgba(163,163,163, 0.4)
+        textarea
+            display: block
+            width: 70%
+            @include decoration(none, 10px, none, 20px, white)
+            @include texto(16px, auto, gray)
+            &:focus
+                border: 2px solid #0075FF
+                outline: none
+                box-shadow: 3px 0px 30px rgba(163,163,163, 0.4)
+        button
+            cursor: pointer
+            @include texto(18px, auto, gray)
+            border: none
+            border-radius: 40px
+            width: fit-content
+            display: flex
+            margin: 20px auto 0px auto
+            padding: 10px 22px
+            background-color: #e98080
+            box-shadow: 0 0 10px #e98080, 0 0 40px #e98080, 0 0 80px #e98080
+            color: white
+            i
+                margin-left: 5px
+            &:active
+                animation: none
+
+.botonIncorrecto
+    animation: saltoBotonIncorrecto 600ms  normal
+    background-color: #b82323
+    box-shadow: 0 0 10px #b82323, 0 0 40px #b82323, 0 0 80px #b82323
+
+.botonCorrecto
+    animation: saltoBotonCorrecto 600ms  normal
+
+.formulario__grupo
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin: 0 0 20px 0
+    p
+        margin-top: 10px
+        font-size: 14px
+        font-weight: bold
+        display: none
+.formulario_grupo_cajaInput
+    width: 70%
+    display: flex
+    position: relative
+    i
+        position: absolute
+        z-index: 2
+        right: 10px
+        top: 40%
+        display: none
+        font-size: 10px
+    input
+        width: 100%
+        margin: 0px
+
+.formulario_grupo_incorrecto
+    p
+        display: flex
+        color: #b43838
+    input
+        border: 3px solid #b43838
+        &:focus
+            border: 3px solid #b43838
+    textarea
+        border: 3px solid #b43838
+        &:focus
+            border: 3px solid #b43838
+    i
+        display: block
+        color: #b43838
+
+.formulario_grupo_correcto
+    p
+        display: none
+    input
+        border: 3px solid #78e46e
+        &:focus
+            border: 3px solid #78e46e
+    textarea
+        border: 3px solid #78e46e
+        &:focus
+            border: 3px solid #78e46e
+    i
+        display: block
+        color: #78e46e
+
+.mensajeRellenar
+    display: none
+    text-align: center
+    p
+        margin-top: 10px
+        color: #b43838
+        font-size: 14px
+        font-weight: bold
+
+.mensajeIncorrecto
+    display: flex
+
+
+
+/*Responsive*/
+@media only screen and (max-width: 500px) 
+
+    .elementos
+        animation: none
+
+    #lista
+        animation: none
+
+
+    .cajaSkillImg
+        align-items: center
+
+    #inicio 
+        display: flex
+        flex-direction: column
+        width: 100%
+
+
+    .Nav
+        width: 100vw
+        z-index: 100
+        &_contenido
+            height: 56px
+            &_avatar
+                img
+                    width: 50px
+                    height: 50px
+    .Nav_contenido_anclas_list
+        display: none
+        width: 100vw
+        height: 94vh
+        margin-top: 56px
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        background-color: $rosaClaro
+        position: absolute
+        z-index: 90
+        top: 0
+        right: 0
+    .Nav_contenido_anclas_responsive
+        display: block
+
+
+    .section_img
+        height: 180px
+
+    .inicio 
+        min-width: 100%
+        margin: none
+        img
+            width: 100%
+            height: 270px
+            margin-bottom: 30px
+            animation: none
+        &_tituloInfo
+            width: 100%
+            margin-top: 20px
+            &_titulo
+                font-size: 50px
+            h2
+                font-size: 35px
+            p
+                font-size: 20px
+                animation: Img 1s alternate infinite 
+
+    .sobreMi
+        flex-direction: column
+        padding-left: 0px
+        padding-right: 0px
+        img
+            width: 170px
+            height: 170px
+            margin-bottom: 30px
+        &_col
+            width: 90%
+            &_bio
+                width: 100%
+                padding: 20px
+            &_fila
+                flex-direction: column
+                width: 100%
+                &_datos
+                    width: 100%
+                    padding: 20px
+                    ul
+                        width: 100%
+                &_intereses
+                    width: 100%
+                    padding: 20px
+                    margin-left: 0px
+                    margin-top: 30px
+                    &_caja
+                        width: 100%
+                        justify-content: center
+                        &_iconos
+                            width: 135px
+                    img
+                        width: 80px
+                        height: 80px
+                        margin-bottom: 0px
+    #cajita
+        margin-right: 5px
+
+    .skills
+        width: 90%
+        img
+            display: none
+        h2
+            font-size: 35px
+        &_contenidoFila
+            flex-direction: column
+            width: 95%
+            &_col
+                width: 100%
+                margin-right: 0px
+                margin-bottom: 20px
+
+    #portafolio
+        padding-top: 56px
+    #ondaPortafolio
+        height: 270px
+    .portafolio
+        h2
+            font-size: 35px
+        &_galeria
+            display: grid
+            grid-template-columns: auto auto
+            gap: 10px
+            &_proyecto
+                padding: 10px
+                border-radius: 30px
+                img
+                    width: 130px
+                    height: 100px
+                &_overlay
+                    h3
+                        font-size: 20px
+
+    .sectionContacto
+        position: relative
+        display: flex
+        justify-content: flex-end
+        height: 100vh
+        &_img
+            display: none
+        &_contenido
+            width: 80%
+            height: auto
+            margin: auto
+            background: $rosaClaro
+            padding: 10px
+            border-radius: 40px
+            img
+                width: 100px
+                height: 100px
+            input
+                padding: 10px
+            textarea
+                padding: 10px
+                width: 70%
+            button
+                margin-bottom: 10px
+    .formulario_grupo_incorrecto_cajaInput
+        width: 80%
+    .formulario__grupo p
+        font-size: 12px
+        text-align: center
+    @keyframes Img
+        0%
+            transform: scale(1)
+        100%
+            transform: scale(1.07)
